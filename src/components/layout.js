@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import {
   container,
   nav,
@@ -9,11 +9,24 @@ import {
 } from "./layout.module.css"
 
 const Layout = ({ pageTitle, children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      wpPage(slug: { eq: "home-page" }) {
+        homePage {
+          title
+        }
+      }
+    }
+  `)
+  const { title } = data.wpPage.homePage
+
   return (
     <div className={container}>
-      <title>{pageTitle}</title>
+      <title>{title}</title>
       <nav className={nav}>
+        <header className={title}></header>
         <ul className={navLinks}>
+          <li></li>
           <li className={navLinkItem}>
             <Link className={navLinkText} to="/">
               Home
@@ -21,7 +34,7 @@ const Layout = ({ pageTitle, children }) => {
           </li>
           <li className={navLinkItem}>
             <Link className={navLinkText} to="/about">
-              About
+              Paramount Pictures
             </Link>
           </li>
         </ul>
