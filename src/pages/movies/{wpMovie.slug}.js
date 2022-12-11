@@ -5,7 +5,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const MoviePage = ({
   data: {
-    wpMovie: { paramountPicturesMeta: movie },
+    wpMovie: {
+      paramountPicturesMeta: movie,
+      genres: { nodes: genres },
+    },
   },
 }) => {
   const image = getImage(movie.picture.localFile)
@@ -22,6 +25,12 @@ const MoviePage = ({
         <p>Characters: {movie.characters}</p>
         <p>Box Office: {movie.boxOffice}</p>
         <p>Budget: {movie.budget}</p>
+
+        <ul>
+          {genres.map(genre => (
+            <li key={genre.name}>{genre.name}</li>
+          ))}
+        </ul>
       </Layout>
     </div>
   )
@@ -48,6 +57,11 @@ export const query = graphql`
             }
           }
           altText
+        }
+      }
+      genres {
+        nodes {
+          name
         }
       }
     }
