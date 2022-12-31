@@ -6,7 +6,7 @@ const Contact = () => {
     <div>
       <Layout pageTitle="Contact">
         <div className="container ">
-          <form>
+          <form name="contact" method="POST" data-netlify="true">
             <div className="d-flex  justify-content-between gap-2">
               <div className="col-6">
                 <label
@@ -15,7 +15,12 @@ const Contact = () => {
                 >
                   First Name
                 </label>
-                <input type="text" className="form-control" id="firstName" />
+                <input
+                  type="text"
+                  className="form-control"
+                  id="firstName"
+                  required="true"
+                />
               </div>
               <div className="col-6 ">
                 <div className="form-group mr-3">
@@ -25,7 +30,12 @@ const Contact = () => {
                   >
                     Last Name
                   </label>
-                  <input type="text" className="form-control" id="lastName" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="lastName"
+                    required="true"
+                  />
                 </div>
               </div>
             </div>
@@ -38,7 +48,12 @@ const Contact = () => {
                   >
                     Email
                   </label>
-                  <input type="email" className="form-control" id="email" />
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    required="true"
+                  />
                 </div>
               </div>
               <div className="col-6">
@@ -58,8 +73,14 @@ const Contact = () => {
               <label htmlFor="message" className="text-white mt-3 ms-1 fs-5">
                 Message
               </label>
-              <textarea className="form-control" id="message" rows="6" />
+              <textarea
+                className="form-control"
+                id="message"
+                rows="6"
+                required="true"
+              />
             </div>
+            <input type="hidden" name="form-name" value="contact" />
             <button type="submit" className="btn btn-success mt-3 mb-5">
               Submit
             </button>
