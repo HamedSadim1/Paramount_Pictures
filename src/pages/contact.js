@@ -9,32 +9,24 @@ const Contact = () => {
           <form name="contact" method="POST" data-netlify="true">
             <div className="d-flex  justify-content-between gap-2">
               <div className="col-6">
-                <label
-                  htmlFor="firstName"
-                  className="text-white mt-3 ms-1 fs-5 "
-                >
-                  First Name
-                </label>
+                <label className="text-white mt-3 ms-1 fs-5 ">First Name</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="firstName"
+                  name="name"
                   required="true"
                 />
               </div>
               <div className="col-6 ">
                 <div className="form-group mr-3">
-                  <label
-                    htmlFor="lastName"
-                    className="text-white mt-3 ms-1 fs-5 mr-2"
-                  >
+                  <label className="text-white mt-3 ms-1 fs-5 mr-2">
                     Last Name
                   </label>
                   <input
                     type="text"
                     className="form-control"
-                    id="lastName"
                     required="true"
+                    name="lastName"
                   />
                 </div>
               </div>
@@ -42,40 +34,32 @@ const Contact = () => {
             <div className="d-flex  justify-content-between gap-2">
               <div className="col-6">
                 <div className="form-group mr-3">
-                  <label
-                    htmlFor="email"
-                    className="text-white mt-3 ms-1 fs-5 mr-2"
-                  >
+                  <label className="text-white mt-3 ms-1 fs-5 mr-2">
                     Email
                   </label>
                   <input
                     type="email"
                     className="form-control"
-                    id="email"
+                    name="email"
                     required="true"
                   />
                 </div>
               </div>
               <div className="col-6">
                 <div className="form-group mr-3">
-                  <label
-                    htmlFor="subject"
-                    className="text-white mt-3 ms-1 fs-5 mr-2"
-                  >
+                  <label className="text-white mt-3 ms-1 fs-5 mr-2">
                     Subject
                   </label>
-                  <input type="text" className="form-control" id="subject" />
+                  <input type="text" className="form-control" name="subject" />
                 </div>
               </div>
             </div>
 
             <div className="form-group">
-              <label htmlFor="message" className="text-white mt-3 ms-1 fs-5">
-                Message
-              </label>
+              <label className="text-white mt-3 ms-1 fs-5">Message</label>
               <textarea
                 className="form-control"
-                id="message"
+                name="message"
                 rows="6"
                 required="true"
               />
