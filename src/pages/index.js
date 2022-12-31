@@ -13,18 +13,31 @@ const IndexPage = ({
   return (
     <main>
       <Layout pageTitle={homePage.title}>
-        <p>{homePage.description}</p>
+        <div className="container row mt-5">
+          <div className="col col-md-6">
+            <GatsbyImage
+              image={image}
+              alt={homePage.picture.altText}
+              className="img-thumbnail bg-dark rounded mx-auto  h-100 "
+            />
+          </div>
 
-        <GatsbyImage image={image} alt={homePage.picture.altText} />
+          <div
+            className="col col-md-6
+          d-flex
+          justify-content-center
+          align-items-center "
+          >
+            <p className="text-white  text-center text-md-start  mt-5 mt-md-0">
+              {homePage.description}
+            </p>
+          </div>
+        </div>
 
-        <div>
-          {homePage.featuredProducts.map(movie => {
+        <div className="d-flex justify-content-center gap-5 ">
+          {homePage.featuredProducts.map((movie, index) => {
             return (
-              <Movie
-                movie={movie}
-                key={movie.id}
-                slug={`movies/${movie.slug}`}
-              />
+              <Movie movie={movie} key={index} slug={`movies/${movie.slug}`} />
             )
           })}
         </div>
@@ -55,13 +68,14 @@ export const query = graphql`
               title
               picture {
                 localFile {
-                  childrenImageSharp {
+                  childImageSharp {
                     gatsbyImageData(
                       placeholder: BLURRED
-                      transformOptions: { grayscale: true }
+                      transformOptions: { grayscale: false }
                     )
                   }
                 }
+                altText
               }
             }
           }

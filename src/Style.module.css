@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Fansy";
+  src: url("./components/fonts/ShellaheraScriptDemo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: FooterIcons;
+  src: url("./components/fonts/Broetown.ttf"), format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "signatureTitle";
+  src: url("./components/fonts/AAutoSignature-1GD9j.ttf"), format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.btn:hover {
+  background-color: blue;
+}
+
+.brandName {
+  font-family: "Fansy";
+  color: white;
+  font-size: 70px;
+}
+
+.brandName:hover {
+  color: blue;
+}
+
+.footerIcons {
+  font-family: "FooterIcons";
+  color: white;
+}
+
+.footerIcons:hover {
+  color: blue;
+}
+
+.signature {
+  font-family: "signatureTitle";
+  color: white;
+  font-size: 20px;
+}
+
+.imageContainer:hover .hoverOverlay {
+  display: block;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.hoverOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.imageContainer:hover .hoverOverlay {
+  color: white;
+  opacity: 1;
+}

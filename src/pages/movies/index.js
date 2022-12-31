@@ -12,19 +12,23 @@ const MoviesPage = ({
 }) => {
   const image = getImage(paramountPictures?.picture?.localFile)
 
-  console.log(`paramountPictures : ${paramountPictures}`)
   return (
-    <>
-      <Layout pageTitle="Movies">
-        <p>{paramountPictures?.description}</p>
-        <GatsbyImage image={image} alt={paramountPictures?.picture.altText} />
-        <div>
-          {edges.map(({ node: movie }) => {
-            return <Movie movie={movie} key={movie.id} slug={movie.slug} />
-          })}
+    <Layout pageTitle="Movies">
+      <div className=" row ">
+        <div className="d-flex justify-content-center ">
+          <p>{paramountPictures?.description}</p>
+
+          <GatsbyImage image={image} alt={paramountPictures?.picture.altText} />
+
+          <div className="d-flex justify-content-center gap-4">
+            {edges.map(({ node: movie }) => {
+              console.log(movie)
+              return <Movie movie={movie} key={movie.id} slug={movie.slug} />
+            })}
+          </div>
         </div>
-      </Layout>
-    </>
+      </div>
+    </Layout>
   )
 }
 
@@ -66,7 +70,7 @@ export const query = graphql`
                 childImageSharp {
                   gatsbyImageData(
                     placeholder: BLURRED
-                    transformOptions: { grayscale: true }
+                    transformOptions: { grayscale: false }
                   )
                 }
               }
