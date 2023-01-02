@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "./../../components/layout"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Carousel from "react-bootstrap/Carousel"
+import { img } from "../../Style.module.css"
 
 const MoviePage = ({
   data: {
@@ -12,6 +14,10 @@ const MoviePage = ({
   },
 }) => {
   const image = getImage(movie.picture.localFile)
+  const image1 = getImage(movie.picture1.localFile)
+  const image2 = getImage(movie.picture2.localFile)
+  const image3 = getImage(movie.picture3.localFile)
+
   const { title } = movie
   return (
     <Layout pageTitle={title} className="mb-4">
@@ -88,6 +94,35 @@ const MoviePage = ({
             />
           </div>
         </div>
+
+        <div className="d-flex justify-content-center align-items-center mt-5 me-5">
+          <h3>
+            <strong>Images of {title}</strong>
+          </h3>
+        </div>
+        <Carousel className="d-flex justify-content-center">
+          <Carousel.Item>
+            <GatsbyImage
+              image={image1}
+              alt={movie.picture1.altText}
+              className={`${img} rounded `}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <GatsbyImage
+              image={image2}
+              alt={movie.picture2.altText}
+              className={`${img} rounded `}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <GatsbyImage
+              image={image3}
+              alt={movie.picture3.altText}
+              className={`${img} rounded`}
+            />
+          </Carousel.Item>
+        </Carousel>
       </div>
     </Layout>
   )
@@ -115,7 +150,32 @@ export const query = graphql`
           }
           altText
         }
+        picture1 {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+          altText
+        }
+        picture2 {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+          altText
+        }
+        picture3 {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+          altText
+        }
       }
+
       genres {
         nodes {
           name
