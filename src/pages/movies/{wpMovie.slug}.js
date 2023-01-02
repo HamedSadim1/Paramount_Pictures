@@ -12,23 +12,66 @@ const MoviePage = ({
   },
 }) => {
   const image = getImage(movie.picture.localFile)
+  const { title } = movie
   return (
-    <Layout pageTitle="Movie Template">
-      <div className="container text-white">
+    <Layout pageTitle={title} className="mb-4">
+      <div className="container text-white mt-5">
         <div className="d-flex  justify-content-between">
           <div className="col-6 ">
             <p>{movie.description}</p>
-            <p>Director: {movie.director}</p>
-            <p>Writer: {movie.writer}</p>
-            <p>Producers: {movie.producers}</p>
-            <p>Music: {movie.music}</p>
-            <p>Cinematography: {movie.cinematography}</p>
-            <p>Characters: {movie.characters}</p>
-            <p>Box Office: {movie.boxOffice}</p>
-            <p>Budget: {movie.budget}</p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Director:</strong>
+              </span>
+              {movie.director}
+            </p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Writer:</strong>
+              </span>
+              {movie.writer}
+            </p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Producers:</strong>
+              </span>
+              {movie.producers}
+            </p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Music:</strong>
+              </span>
+              {movie.music}
+            </p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Cinematography:</strong>
+              </span>
+              {movie.cinematography}
+            </p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Characters:</strong>
+              </span>
+              {movie.characters}
+            </p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Box Office:</strong>
+              </span>
+              {movie.boxOffice}
+            </p>
+            <p>
+              <span className="text-primary me-2">
+                <strong>Budget:</strong>
+              </span>
+              {movie.budget}
+            </p>
 
             <div className="d-flex justify-content-center align-items-center ">
-              <p>Genres</p>
+              <p className="text-primary me-2">
+                <strong>Genres:</strong>
+              </p>
             </div>
 
             <div className="d-flex justify-content-between  ">
@@ -41,7 +84,7 @@ const MoviePage = ({
             <GatsbyImage
               image={image}
               alt={movie.picture.altText}
-              className="img-fluid w-100 h-100 "
+              className="img-fluid w-100 h-100 rounded "
             />
           </div>
         </div>

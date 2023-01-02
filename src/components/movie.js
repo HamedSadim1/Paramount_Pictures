@@ -7,21 +7,23 @@ const Movie = ({ movie, slug }) => {
   const profile = getImage(movie.paramountPicturesMeta.picture.localFile)
   console.log(movie)
   return (
-    <div className="mt-5 mb-5 hover">
+    <div className="mt-5 mb-5 hover d-flex justify-content-center">
       <div className={imageContainer}>
         <Link
           to={slug}
           className="col-12 col-md-6 col-lg-4 text-white text-decoration-none"
         >
-          <GatsbyImage
-            image={profile}
-            alt={movie.paramountPicturesMeta.picture.altText}
-            style={{
-              width: 200,
-              height: 300,
-            }}
-            className="img-thumbnail img-fluid"
-          />
+          <div className="d-flex justify-content-center ">
+            <GatsbyImage
+              image={profile}
+              alt={movie.paramountPicturesMeta.picture.altText}
+              style={{
+                width: 200,
+                height: 300,
+              }}
+              className="img-thumbnail img-fluid"
+            />
+          </div>
           <div className={hoverOverlay}>
             <article>
               {movie.paramountPicturesMeta.title && (

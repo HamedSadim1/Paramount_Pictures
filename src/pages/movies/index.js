@@ -14,17 +14,23 @@ const MoviesPage = ({
 
   return (
     <Layout pageTitle="Movies">
-      <div className=" row ">
+      <div className="row ">
         <div className="d-flex justify-content-center ">
           <p>{paramountPictures?.description}</p>
 
-          <GatsbyImage image={image} alt={paramountPictures?.picture.altText} />
-
           <div className="d-flex justify-content-center gap-4">
-            {edges.map(({ node: movie }) => {
-              console.log(movie)
-              return <Movie movie={movie} key={movie.id} slug={movie.slug} />
-            })}
+            <GatsbyImage
+              image={image}
+              alt={paramountPictures?.picture.altText}
+            />
+          </div>
+
+          <div className="row ">
+            <div className=" d-flex justify-content-center gap-5 flex-wrap">
+              {edges.map(({ node: movie }) => {
+                return <Movie movie={movie} key={movie.id} slug={movie.slug} />
+              })}
+            </div>
           </div>
         </div>
       </div>

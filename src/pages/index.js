@@ -34,12 +34,31 @@ const IndexPage = ({
           </div>
         </div>
 
-        <div className="d-flex justify-content-center gap-5 ">
-          {homePage.featuredProducts.map((movie, index) => {
-            return (
-              <Movie movie={movie} key={index} slug={`movies/${movie.slug}`} />
-            )
-          })}
+        <div className="card bg-dark">
+          <div className="card-header">
+            <h2 className=" text-center mt-5 text-white">
+              Featured Paramount Pictures Movies
+            </h2>
+            <p class="card-text text-white text-center">
+              Paramount Pictures has produced some of the most iconic and
+              beloved movies of all time. From classic films like "The
+              Godfather" and "Titanic" to modern blockbusters like "Mission
+              Impossible" and "A Quiet Place," the studio has consistently
+              delivered high-quality entertainment for audiences around the
+              world.
+            </p>
+            <div className="card-body d-flex justify-content-center align-items-center flex-wrap gap-5">
+              {homePage.featuredProducts.map((movie, index) => {
+                return (
+                  <Movie
+                    movie={movie}
+                    key={index}
+                    slug={`movies/${movie.slug}`}
+                  />
+                )
+              })}
+            </div>
+          </div>
         </div>
       </Layout>
     </main>

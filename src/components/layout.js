@@ -20,7 +20,7 @@ const Layout = ({ pageTitle, children }) => {
       <title className={`${signature}`}>{title}</title>
 
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className={`navbar-brand ms-5  ${brandName}`} href="#">
+        <a className={`navbar-brand ms-5  ${brandName}`} href="/">
           {title}
         </a>
         <button
@@ -64,6 +64,14 @@ const Layout = ({ pageTitle, children }) => {
                 className={`text-decoration-non text-white ${btn}`}
               >
                 Contact
+              </Link>
+            </li>
+            <li className="nav-item ms-5">
+              <Link
+                to="/about"
+                className={`text-decoration-non text-white ${btn}`}
+              >
+                About
               </Link>
             </li>
           </ul>

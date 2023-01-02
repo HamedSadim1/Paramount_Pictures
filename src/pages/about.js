@@ -5,19 +5,18 @@ import { StaticImage } from "gatsby-plugin-image"
 const AboutPage = () => {
   return (
     <Layout pageTitle="About Us">
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
           <div className="col-12">
-            <h1 className="text-white">About Us</h1>
             <p className="text-white">
-              About Us: Paramount Pictures Corporation is an American film
-              studio based in Hollywood, California. It is a subsidiary of
-              ViacomCBS and is a member of the Motion Picture Association of
-              America (MPAA). The studio is known for producing and distributing
-              films of various genres and commercial success, and is the oldest
-              surviving film studio in the world. Paramount Pictures is a member
-              of the "Big Five" major American film studios and the National
-              Association of Theatre Owners (NATO).
+              Paramount Pictures Corporation is an American film studio based in
+              Hollywood, California. It is a subsidiary of ViacomCBS and is a
+              member of the Motion Picture Association of America (MPAA). The
+              studio is known for producing and distributing films of various
+              genres and commercial success, and is the oldest surviving film
+              studio in the world. Paramount Pictures is a member of the "Big
+              Five" major American film studios and the National Association of
+              Theatre Owners (NATO).
             </p>
           </div>
 

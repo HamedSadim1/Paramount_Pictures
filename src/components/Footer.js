@@ -14,7 +14,7 @@ const Footer = () => {
             <section className={`mb-4 ${footerIcons}`}>
               <a
                 className="btn btn-outline-light btn-floating m-1"
-                href="#!"
+                href="https://www.twitter.com/"
                 role="button"
               >
                 <StaticImage
@@ -27,7 +27,7 @@ const Footer = () => {
 
               <a
                 className="btn btn-outline-light btn-floating m-1"
-                href="#!"
+                href="https://www.instagram.com/"
                 role="button"
               >
                 <StaticImage
@@ -40,7 +40,7 @@ const Footer = () => {
 
               <a
                 className="btn btn-outline-light btn-floating m-1"
-                href="#!"
+                href="https://www.facebook.com/"
                 role="button"
               >
                 <StaticImage
