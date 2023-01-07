@@ -12,7 +12,7 @@ const IndexPage = ({
   const image = getImage(homePage.picture.localFile)
   return (
     <main>
-      <Layout pageTitle={homePage.title}>
+      <Layout pageTitle={`College Project ${homePage.title}`}>
         <div className="container row mt-5">
           <div className="col col-md-6">
             <GatsbyImage

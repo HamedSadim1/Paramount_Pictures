@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Footer from "./Footer"
-import { btn, brandName, signature } from "../Style.module.css"
+import { btn, brandName } from "../Style.module.css"
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -17,8 +17,6 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <div className="bg-dark">
-      <title className={`${signature}`}>{title}</title>
-
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className={`navbar-brand ms-5  ${brandName}`} href="/">
           {title}
@@ -43,9 +41,6 @@ const Layout = ({ pageTitle, children }) => {
               <Link
                 to="/"
                 className={`text-decoration-non text-white ms-5 me-5 ${btn}`}
-                style={{
-                  textDecoration: "none",
-                }}
               >
                 Home
               </Link>
@@ -79,7 +74,7 @@ const Layout = ({ pageTitle, children }) => {
       </nav>
 
       <main>
-        <h1 className="text-center text-white">{pageTitle}</h1>
+        <h1 className={` ${brandName} text-white text-center`}>{pageTitle}</h1>
         {children}
       </main>
       <Footer />

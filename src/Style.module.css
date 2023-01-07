@@ -6,7 +6,7 @@
 }
 
 @font-face {
-  font-family: FooterIcons;
+  font-family: "FooterIcons";
   src: url("./components/fonts/Broetown.ttf"), format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -17,6 +17,12 @@
   src: url("./components/fonts/AAutoSignature-1GD9j.ttf"), format("truetype");
   font-weight: 400;
   font-style: normal;
+}
+
+.titleSignature {
+  font-family: "signatureTitle";
+  color: white;
+  font-size: 20px;
 }
 
 .btn {
@@ -54,12 +60,6 @@
 
 .footerIcons:hover {
   color: blue;
-}
-
-.signature {
-  font-family: "signatureTitle";
-  color: white;
-  font-size: 20px;
 }
 
 .imageContainer:hover .hoverOverlay {

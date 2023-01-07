@@ -95,35 +95,35 @@ const MoviePage = ({
           </div>
         </div>
 
-        <div className="d-flex justify-content-center align-items-center mt-5 me-5">
+        <div className="d-flex justify-content-center align-items-center mt-5 me-5 me-5">
           <h3>
             <strong>Images of {title}</strong>
           </h3>
         </div>
-        <Carousel className="d-flex justify-content-center">
-          <Carousel.Item>
-            <GatsbyImage
-              image={image1}
-              alt={movie.picture1.altText}
-              className={`${img} rounded `}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <GatsbyImage
-              image={image2}
-              alt={movie.picture2.altText}
-              className={`${img} rounded `}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <GatsbyImage
-              image={image3}
-              alt={movie.picture3.altText}
-              className={`${img} rounded`}
-            />
-          </Carousel.Item>
-        </Carousel>
       </div>
+      <Carousel className="d-flex justify-content-center mt-5 mb-5">
+        <Carousel.Item>
+          <GatsbyImage
+            image={image1}
+            alt={movie.picture1.altText}
+            className={`${img} rounded `}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <GatsbyImage
+            image={image2}
+            alt={movie.picture2.altText}
+            className={`${img} rounded `}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <GatsbyImage
+            image={image3}
+            alt={movie.picture3.altText}
+            className={`${img} rounded`}
+          />
+        </Carousel.Item>
+      </Carousel>
     </Layout>
   )
 }
